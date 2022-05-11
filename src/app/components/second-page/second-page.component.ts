@@ -17,16 +17,17 @@ export class SecondPageComponent implements OnInit {
     modifyBy: [ '', [Validators.required ] ],
     modifyDate: [ '', [Validators.required] ],
     description: ['', [ Validators.required ] ],
-    triggerdateLbman: [ '' ],
-    triggerdateSvcscat: [ '' ],
-    triggerdateItem: [ '' ],
+    triggerdateLbman: [ false ],
+    triggerdateSvcscat: [ false ],
+    triggerdateItem: [ false ],
     isinterimtrigger: [ '' ],
-    constraintLbman: [ '' ],
-    constraintSvcscat: [ '' ],
-    constraintItem: [ '' ],
+    constraintLbman: [ false ],
+    constraintSvcscat: [ false ],
+    constraintItem: [ false ],
     purma: [ '' ],
     nntm: [ '' ],
     pdbtm: [ '' ],
+    dsart: [ '' ],
     trigger: [ '' ],
     interimtrigger: [ '' ],
     constraint: [ '' ],
@@ -34,19 +35,21 @@ export class SecondPageComponent implements OnInit {
     lbmanProcbasisref: [ '' ],
     editable: [ '' ]
   })
+  triggerDateKnown: any
+  constraintDateKnown: any
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('assets/response.json').subscribe({
-      next: (v) => {
-        this.data = v
-        console.log(this.data)
-      },
-      error: () => {
-        console.error('Problem with loading response.json')
-      }
-    })
+  
+  }
+
+  check(event: any): void {
+    console.log(this.triggerForm)
+  }
+
+  onChange(event: any) {
+    console.log(event)
   }
 
 }
