@@ -20,10 +20,13 @@
               <mat-radio-button value="2">Service Category</mat-radio-button>
               <mat-radio-button value="3">Item</mat-radio-button>
             </mat-radio-group>
-          </mat-card>
+          </mat-card><br>
 
           <mat-card>
             <mat-checkbox>Is Interim Trigger?</mat-checkbox>
+            <mat-form-field>
+              <mat-select floatLabel="never" placeholder="Interim Trigger Name"></mat-select>
+            </mat-form-field>
           </mat-card>
 
           <mat-form-field>
@@ -48,6 +51,20 @@
             <mat-select floatLabel="never" placeholder="Related Processing Basis Reference Type *">
             </mat-select>
           </mat-form-field>
+
+          <mat-card>
+            <mat-checkbox>PURMA</mat-checkbox>
+            <mat-checkbox>NNTM</mat-checkbox>
+            <mat-checkbox>PDB</mat-checkbox>
+            <mat-checkbox>DSART</mat-checkbox>
+          </mat-card>
+
+          <mat-form-field>
+            <textarea matInput placeholder="Description"></textarea>
+          </mat-form-field>
+
+          <button mat-raised-button color="light"><span class="material-icons">close</span> Close</button>
+          <button mat-raised-button color="light" disabled><span class="material-icons">save</span> Save</button>
 
         </div>
       </div>

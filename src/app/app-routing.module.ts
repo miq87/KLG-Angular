@@ -5,8 +5,9 @@ import { FirstPageComponent } from './components/first-page/first-page.component
 import { SecondPageComponent } from './components/second-page/second-page.component';
 
 const routes: Routes = [
-  { path: 'table', component: FirstPageComponent, pathMatch: 'full' },
-  { path: 'new', component: SecondPageComponent, pathMatch: 'full' }
+  { path: '', component: FirstPageComponent },
+  { path: 'table', component: FirstPageComponent },
+  { path: 'new', component: SecondPageComponent }
 ];
 
 @NgModule({
