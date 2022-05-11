@@ -64,7 +64,7 @@
             <textarea matInput placeholder="Description" formControlName="description"></textarea>
           </mat-form-field>
 
-          <button mat-raised-button color="light" (click)="check($event)"><span class="material-icons">close</span> Close</button>
+          <button mat-raised-button color="light" (click)="onCheck()"><span class="material-icons">close</span> Close</button>
           <button mat-raised-button color="light" [disabled]="triggerForm.invalid"><span class="material-icons">save</span> Save</button>
 
         </div>
