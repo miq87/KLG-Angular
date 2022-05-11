@@ -1,1 +1,56 @@
-<p>second-page works!</p>
+<mat-card>
+  <form class="example-form">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <mat-card>Name *</mat-card>
+
+          <mat-form-field>
+            <mat-select floatLabel="never" placeholder="Trigger Name *">
+              <mat-option *ngFor="let element of data" [value]="element.name">
+                {{ element.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-card>
+            <mat-radio-group aria-label="Select an option">
+              <mat-label>Trigger Date Known *</mat-label><br>
+              <mat-radio-button value="1">Lawful</mat-radio-button>
+              <mat-radio-button value="2">Service Category</mat-radio-button>
+              <mat-radio-button value="3">Item</mat-radio-button>
+            </mat-radio-group>
+          </mat-card>
+
+          <mat-card>
+            <mat-checkbox>Is Interim Trigger?</mat-checkbox>
+          </mat-card>
+
+          <mat-form-field>
+            <mat-select floatLabel="never" placeholder="Constraint Name *">
+            </mat-select>
+          </mat-form-field>
+
+          <mat-card>
+            <mat-radio-group aria-label="Select an option" floatLabel="never" placeholder="Constraint Value Known">
+              <mat-radio-button value="1">Lawful</mat-radio-button>
+              <mat-radio-button value="2">Service Category</mat-radio-button>
+              <mat-radio-button value="3">Item</mat-radio-button>
+            </mat-radio-group>
+          </mat-card>
+
+          <mat-form-field>
+            <mat-select floatLabel="never" placeholder="Effective Deadline Info *">
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select floatLabel="never" placeholder="Related Processing Basis Reference Type *">
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-card>

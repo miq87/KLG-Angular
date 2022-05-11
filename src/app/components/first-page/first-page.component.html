@@ -1,5 +1,5 @@
 <mat-card>
-  <button mat-raised-button color="primary"><span class="material-icons">add</span> New</button>
+  <button mat-raised-button color="primary" [routerLink]="['/new']"><span class="material-icons">add</span> New</button>
   <table mat-table [dataSource]="data" matSort>
     <ng-container matColumnDef="Name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ columns[0] }}</th>
