@@ -1,12 +1,12 @@
 <mat-card>
-  <form class="example-form">
+  <form class="example-form" [formGroup]="triggerForm">
     <div class="container">
       <div class="row">
         <div class="col">
           <mat-card>Name *</mat-card>
 
           <mat-form-field>
-            <mat-select floatLabel="never" placeholder="Trigger Name *">
+            <mat-select floatLabel="never" placeholder="Trigger Name *" formControlName="name">
               <mat-option *ngFor="let element of data" [value]="element.name">
                 {{ element.name }}
               </mat-option>
@@ -64,7 +64,7 @@
           </mat-form-field>
 
           <button mat-raised-button color="light"><span class="material-icons">close</span> Close</button>
-          <button mat-raised-button color="light" disabled><span class="material-icons">save</span> Save</button>
+          <button mat-raised-button color="light" [disabled]="triggerForm.invalid"><span class="material-icons">save</span> Save</button>
 
         </div>
       </div>

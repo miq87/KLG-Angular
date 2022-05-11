@@ -10,15 +10,29 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class SecondPageComponent implements OnInit {
 
   data: any
-  contactForm = this.fb.group({
+  triggerForm = this.fb.group({
     id: [''],
-    firstName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(16)]],
-    lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(16)]],
-    phoneNumber: ['', [Validators.required, Validators.pattern("[0-9]{9,12}")]],
-    phoneCategory: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
-    birthdayDate: [''],
-    position: ['']
+    name: [ '', [ Validators.required ] ],
+    status: [ '', [ Validators.required ] ],
+    modifyBy: [ '', [Validators.required ] ],
+    modifyDate: [ '', [Validators.required] ],
+    description: ['', [ Validators.required ] ],
+    triggerdateLbman: [ '' ],
+    triggerdateSvcscat: [ '' ],
+    triggerdateItem: [ '' ],
+    isinterimtrigger: [ '' ],
+    constraintLbman: [ '' ],
+    constraintSvcscat: [ '' ],
+    constraintItem: [ '' ],
+    purma: [ '' ],
+    nntm: [ '' ],
+    pdbtm: [ '' ],
+    trigger: [ '' ],
+    interimtrigger: [ '' ],
+    constraint: [ '' ],
+    lbmanEffectivedeadlineinfo: [ '' ],
+    lbmanProcbasisref: [ '' ],
+    editable: [ '' ]
   })
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
