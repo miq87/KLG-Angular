@@ -15,7 +15,7 @@
 
           <mat-card>
             <mat-radio-group aria-label="Select an option" floatLabel="never" [(ngModel)]="triggerDateKnown"
-            [ngModelOptions]="{standalone: true}" placeholder="Trigger Date Known" (change)="onChange($event)">
+            [ngModelOptions]="{standalone: true}" placeholder="Trigger Date Known" (change)="onTriggerChange($event)">
               <mat-radio-button value="triggerdateLbman">Lawful</mat-radio-button>
               <mat-radio-button value="triggerdateSvcscat">Service Category</mat-radio-button>
               <mat-radio-button value="triggerdateItem">Item</mat-radio-button>
@@ -36,7 +36,7 @@
 
           <mat-card>
             <mat-radio-group aria-label="Select an option" floatLabel="never" [(ngModel)]="constraintDateKnown"
-            [ngModelOptions]="{standalone: true}" placeholder="Constraint Value Known">
+            [ngModelOptions]="{standalone: true}" placeholder="Constraint Value Known" (change)="onConstraintChange($event)">
               <mat-radio-button value="constraintLbman">Lawful</mat-radio-button>
               <mat-radio-button value="constraintSvcscat">Service Category</mat-radio-button>
               <mat-radio-button value="constraintItem">Item</mat-radio-button>
@@ -61,7 +61,7 @@
           </mat-card><br>
 
           <mat-form-field>
-            <textarea matInput placeholder="Description"></textarea>
+            <textarea matInput placeholder="Description" formControlName="description"></textarea>
           </mat-form-field>
 
           <button mat-raised-button color="light" (click)="check($event)"><span class="material-icons">close</span> Close</button>

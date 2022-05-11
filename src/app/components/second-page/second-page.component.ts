@@ -13,17 +13,17 @@ export class SecondPageComponent implements OnInit {
   triggerForm = this.fb.group({
     id: [''],
     name: [ '', [ Validators.required ] ],
-    status: [ '', [ Validators.required ] ],
-    modifyBy: [ '', [Validators.required ] ],
-    modifyDate: [ '', [Validators.required] ],
-    description: ['', [ Validators.required ] ],
-    triggerdateLbman: [ false ],
-    triggerdateSvcscat: [ false ],
-    triggerdateItem: [ false ],
+    status: [ '', ],
+    modifyBy: [ '', ],
+    modifyDate: [ '', ],
+    description: ['', [ ] ],
+    triggerdateLbman: [ '' ],
+    triggerdateSvcscat: [ '' ],
+    triggerdateItem: [ '' ],
     isinterimtrigger: [ '' ],
-    constraintLbman: [ false ],
-    constraintSvcscat: [ false ],
-    constraintItem: [ false ],
+    constraintLbman: [ '' ],
+    constraintSvcscat: [ '' ],
+    constraintItem: [ '' ],
     purma: [ '' ],
     nntm: [ '' ],
     pdbtm: [ '' ],
@@ -41,15 +41,53 @@ export class SecondPageComponent implements OnInit {
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
-  
+    this.http.get('assets/response.json').subscribe({
+      next: (v) => {
+        this.data = v
+        console.log(this.data)
+      },
+      error: () => {
+        console.error('Problem with loading response.json')
+      }
+    })
   }
 
   check(event: any): void {
     console.log(this.triggerForm)
   }
 
-  onChange(event: any) {
-    console.log(event)
+  onTriggerChange(event: any) {
+    this.triggerForm.value.triggerdateLbman = false
+    this.triggerForm.value.triggerdateSvcscat = false
+    this.triggerForm.value.triggerdateItem = false
+    switch(event.value) {
+      case "triggerdateLbman":
+        this.triggerForm.value.triggerdateLbman = true
+        break;
+      case "triggerdateSvcscat":
+        this.triggerForm.value.triggerdateSvcscat = true
+        break;
+      case "triggerdateItem":
+        this.triggerForm.value.triggerdateItem = true
+        break;
+    }
+  }
+
+  onConstraintChange(event: any) {
+    this.triggerForm.value.constraintLbman = false
+    this.triggerForm.value.constraintSvcscat = false
+    this.triggerForm.value.constraintItem = false
+    switch(event.value) {
+      case "constraintLbman":
+        this.triggerForm.value.constraintLbman = true
+        break;
+      case "constraintSvcscat":
+        this.triggerForm.value.constraintSvcscat = true
+        break;
+      case "constraintItem":
+        this.triggerForm.value.constraintItem = true
+        break;
+    }
   }
 
 }
