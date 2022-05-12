@@ -1,5 +1,6 @@
+<h5>Trigger and Constraint Schemes - New</h5>
 <mat-card>
-  <form class="example-form" [formGroup]="triggerForm">
+  <form class="example-form" [formGroup]="triggerForm" (ngSubmit)="onSubmit()">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -16,9 +17,9 @@
           <mat-card>
             <mat-radio-group aria-label="Select an option" floatLabel="never" [(ngModel)]="triggerDateKnown"
               [ngModelOptions]="{standalone: true}" placeholder="Trigger Date Known" (change)="onTriggerChange($event)">
-              <mat-radio-button value="triggerdateLbman">Lawful</mat-radio-button>
-              <mat-radio-button value="triggerdateSvcscat">Service Category</mat-radio-button>
-              <mat-radio-button value="triggerdateItem">Item</mat-radio-button>
+              <mat-radio-button value="1">Lawful</mat-radio-button>
+              <mat-radio-button value="2">Service Category</mat-radio-button>
+              <mat-radio-button value="3">Item</mat-radio-button>
             </mat-radio-group>
           </mat-card><br>
 
@@ -43,9 +44,9 @@
             <mat-radio-group aria-label="Select an option" floatLabel="never" [(ngModel)]="constraintDateKnown"
               [ngModelOptions]="{standalone: true}" placeholder="Constraint Value Known"
               (change)="onConstraintChange($event)">
-              <mat-radio-button value="constraintLbman">Lawful</mat-radio-button>
-              <mat-radio-button value="constraintSvcscat">Service Category</mat-radio-button>
-              <mat-radio-button value="constraintItem">Item</mat-radio-button>
+              <mat-radio-button value="1">Lawful</mat-radio-button>
+              <mat-radio-button value="2">Service Category</mat-radio-button>
+              <mat-radio-button value="3">Item</mat-radio-button>
             </mat-radio-group>
           </mat-card><br>
 
@@ -75,9 +76,9 @@
             <textarea matInput placeholder="Description" formControlName="description"></textarea>
           </mat-form-field>
 
-          <button mat-raised-button color="light" (click)="onCheck()"><span class="material-icons">close</span>
+          <button mat-raised-button color="light" type="button"><span class="material-icons">close</span>
             Close</button>
-          <button mat-raised-button color="light" [disabled]="triggerForm.invalid"><span
+          <button mat-raised-button color="light" [disabled]="triggerForm.invalid" type="submit"><span
               class="material-icons">save</span> Save</button>
 
         </div>

@@ -16,17 +16,17 @@ export class SecondPageComponent implements OnInit {
     modifyBy: [ '', ],
     modifyDate: [ '', ],
     description: ['', [ Validators.maxLength(256) ] ],
-    triggerdateLbman: [ '' ],
-    triggerdateSvcscat: [ '' ],
-    triggerdateItem: [ '' ],
-    isinterimtrigger: [ '' ],
-    constraintLbman: [ '' ],
-    constraintSvcscat: [ '' ],
-    constraintItem: [ '' ],
-    purma: [ '' ],
-    nntm: [ '' ],
-    pdbtm: [ '' ],
-    dsart: [ '' ],
+    triggerdateLbman: [ false ],
+    triggerdateSvcscat: [ false ],
+    triggerdateItem: [ false ],
+    isinterimtrigger: [ false ],
+    constraintLbman: [ false ],
+    constraintSvcscat: [ false ],
+    constraintItem: [ false ],
+    purma: [ false ],
+    nntm: [ false ],
+    pdbtm: [ false ],
+    dsart: [ false ],
     trigger: [ '' ],
     interimtrigger: [ '' ],
     constraint: [ '', [ Validators.required ] ],
@@ -51,42 +51,48 @@ export class SecondPageComponent implements OnInit {
     })
   }
 
-  onCheck(): void {
-    console.log(this.triggerForm)
-  }
-
   onTriggerChange(event: any): void {
+    console.log('change')
     this.triggerForm.value.triggerdateLbman = false
     this.triggerForm.value.triggerdateSvcscat = false
     this.triggerForm.value.triggerdateItem = false
     switch(event.value) {
-      case "triggerdateLbman":
+      case "1":
         this.triggerForm.value.triggerdateLbman = true
-        break;
-      case "triggerdateSvcscat":
+        break
+      case "2":
         this.triggerForm.value.triggerdateSvcscat = true
-        break;
-      case "triggerdateItem":
+        break
+      case "3":
         this.triggerForm.value.triggerdateItem = true
-        break;
+        break
     }
   }
 
   onConstraintChange(event: any): void {
+    console.log('change')
     this.triggerForm.value.constraintLbman = false
     this.triggerForm.value.constraintSvcscat = false
     this.triggerForm.value.constraintItem = false
     switch(event.value) {
-      case "constraintLbman":
+      case "1":
         this.triggerForm.value.constraintLbman = true
-        break;
-      case "constraintSvcscat":
+        break
+      case "2":
         this.triggerForm.value.constraintSvcscat = true
-        break;
-      case "constraintItem":
+        break
+      case "3":
         this.triggerForm.value.constraintItem = true
-        break;
+        break
     }
+  }
+
+  onSubmit() {
+    console.log("Submit")
+  }
+
+  onCheck(): void {
+    console.log(this.triggerForm.value)
   }
 
 }
