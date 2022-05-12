@@ -52,7 +52,6 @@ export class SecondPageComponent implements OnInit {
   }
 
   onTriggerChange(event: any): void {
-    console.log('change')
     this.triggerForm.value.triggerdateLbman = false
     this.triggerForm.value.triggerdateSvcscat = false
     this.triggerForm.value.triggerdateItem = false
@@ -70,7 +69,6 @@ export class SecondPageComponent implements OnInit {
   }
 
   onConstraintChange(event: any): void {
-    console.log('change')
     this.triggerForm.value.constraintLbman = false
     this.triggerForm.value.constraintSvcscat = false
     this.triggerForm.value.constraintItem = false
