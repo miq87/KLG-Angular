@@ -15,7 +15,7 @@
 
           <mat-card>
             <mat-radio-group aria-label="Select an option" floatLabel="never" [(ngModel)]="triggerDateKnown"
-            [ngModelOptions]="{standalone: true}" placeholder="Trigger Date Known" (change)="onTriggerChange($event)">
+              [ngModelOptions]="{standalone: true}" placeholder="Trigger Date Known" (change)="onTriggerChange($event)">
               <mat-radio-button value="triggerdateLbman">Lawful</mat-radio-button>
               <mat-radio-button value="triggerdateSvcscat">Service Category</mat-radio-button>
               <mat-radio-button value="triggerdateItem">Item</mat-radio-button>
@@ -23,20 +23,26 @@
           </mat-card><br>
 
           <mat-card>
-            <mat-checkbox>Is Interim Trigger?</mat-checkbox>
+            <mat-checkbox formControlName="isinterimtrigger">Is Interim Trigger?</mat-checkbox>
             <mat-form-field>
-              <mat-select floatLabel="never" placeholder="Interim Trigger Name"></mat-select>
+              <mat-select floatLabel="never" placeholder="Interim Trigger Name" formControlName="interimtrigger">
+                <mat-option value="33">Early contract termination notice</mat-option>
+                <mat-option value=""></mat-option>
+              </mat-select>
             </mat-form-field>
           </mat-card><br>
 
           <mat-form-field>
-            <mat-select floatLabel="never" placeholder="Constraint Name *">
+            <mat-select floatLabel="never" placeholder="Constraint Name *" formControlName="constraint">
+              <mat-option value="1"></mat-option>
+              <mat-option value=""></mat-option>
             </mat-select>
           </mat-form-field>
 
           <mat-card>
             <mat-radio-group aria-label="Select an option" floatLabel="never" [(ngModel)]="constraintDateKnown"
-            [ngModelOptions]="{standalone: true}" placeholder="Constraint Value Known" (change)="onConstraintChange($event)">
+              [ngModelOptions]="{standalone: true}" placeholder="Constraint Value Known"
+              (change)="onConstraintChange($event)">
               <mat-radio-button value="constraintLbman">Lawful</mat-radio-button>
               <mat-radio-button value="constraintSvcscat">Service Category</mat-radio-button>
               <mat-radio-button value="constraintItem">Item</mat-radio-button>
@@ -44,12 +50,17 @@
           </mat-card><br>
 
           <mat-form-field>
-            <mat-select floatLabel="never" placeholder="Effective Deadline Info *">
+            <mat-select floatLabel="never" placeholder="Effective Deadline Info *"
+              formControlName="lbmanEffectivedeadlineinfo">
+              <mat-option value="3">Planned Personal Data transfer to other processing entity</mat-option>
+              <mat-option></mat-option>
             </mat-select>
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select floatLabel="never" placeholder="Related Processing Basis Reference Type *">
+            <mat-select floatLabel="never" placeholder="Related Processing Basis Reference Type"
+              formControlName="lbmanProcbasisref">
+              <mat-option></mat-option>
             </mat-select>
           </mat-form-field>
 
@@ -64,8 +75,10 @@
             <textarea matInput placeholder="Description" formControlName="description"></textarea>
           </mat-form-field>
 
-          <button mat-raised-button color="light" (click)="onCheck()"><span class="material-icons">close</span> Close</button>
-          <button mat-raised-button color="light" [disabled]="triggerForm.invalid"><span class="material-icons">save</span> Save</button>
+          <button mat-raised-button color="light" (click)="onCheck()"><span class="material-icons">close</span>
+            Close</button>
+          <button mat-raised-button color="light" [disabled]="triggerForm.invalid"><span
+              class="material-icons">save</span> Save</button>
 
         </div>
       </div>

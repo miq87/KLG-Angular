@@ -5,8 +5,7 @@ import { flatMap, map } from 'rxjs';
 
 @Component({
   selector: 'app-second-page',
-  templateUrl: './second-page.component.html',
-  styleUrls: ['./second-page.component.css']
+  templateUrl: './second-page.component.html'
 })
 export class SecondPageComponent implements OnInit {
 
@@ -17,7 +16,7 @@ export class SecondPageComponent implements OnInit {
     status: [ '', ],
     modifyBy: [ '', ],
     modifyDate: [ '', ],
-    description: ['', [ ] ],
+    description: ['', [ Validators.maxLength(256) ] ],
     triggerdateLbman: [ '' ],
     triggerdateSvcscat: [ '' ],
     triggerdateItem: [ '' ],
@@ -31,8 +30,8 @@ export class SecondPageComponent implements OnInit {
     dsart: [ '' ],
     trigger: [ '' ],
     interimtrigger: [ '' ],
-    constraint: [ '' ],
-    lbmanEffectivedeadlineinfo: [ '' ],
+    constraint: [ '', [ Validators.required ] ],
+    lbmanEffectivedeadlineinfo: [ '', [ Validators.required ] ],
     lbmanProcbasisref: [ '' ],
     editable: [ '' ]
   })
@@ -42,6 +41,7 @@ export class SecondPageComponent implements OnInit {
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
+
     this.http.get('assets/response.json').subscribe({
       next: (v) => {
         this.data = v
@@ -51,6 +51,7 @@ export class SecondPageComponent implements OnInit {
         console.error('Problem with loading response.json')
       }
     })
+
   }
 
   onCheck(): void {
