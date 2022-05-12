@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { flatMap, map } from 'rxjs';
 
 @Component({
   selector: 'app-second-page',
@@ -41,7 +40,6 @@ export class SecondPageComponent implements OnInit {
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
-
     this.http.get('assets/response.json').subscribe({
       next: (v) => {
         this.data = v
@@ -51,7 +49,6 @@ export class SecondPageComponent implements OnInit {
         console.error('Problem with loading response.json')
       }
     })
-
   }
 
   onCheck(): void {

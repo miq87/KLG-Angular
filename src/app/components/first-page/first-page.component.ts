@@ -9,7 +9,8 @@ export class FirstPageComponent implements OnInit {
 
   data: any
   columns = [ 'Name', 'Description', 'Trigger Name',
-  'Interim Trigger Name', 'Effective Deadline Info', "Methods" ]
+    'Interim Trigger Name', 'Effective Deadline Info', "Methods" ]
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -45,6 +46,5 @@ export class FirstPageComponent implements OnInit {
       default:  return ""
     }
   }
-
 
 }
