@@ -20,3 +20,33 @@ mat-radio-button {
 mat-checkbox {
   margin: 8px;
 }
+
+.icon-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.icon1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.icon2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.icon3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.icon4 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
